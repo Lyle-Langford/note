@@ -96,6 +96,37 @@ hgetall key 获取所有键值对
 ```
 hdel key field
 ```
-
-
-
+# List类型
+redis的list类型其实就一个 每个子元素都是String类型的双向链表。<br>
+我们可以通过push, pop操作从链表的头部或者尾部添加删除元素，这样list既可以作为栈，又可以作为队列。<br>
+<br>
+添加元素与获取元素
+```
+lpush key value value ... 依次从左侧添加元素
+rpush key value value ... 依次从右侧添加元素
+lindex key index 获取指定下标的元素
+lrange key beginIndex endIndex 获取元素，下标从0开始， -1表示最后
+llen key 获取元素数量
+```
+在指定元素的前面或者后面添加字符串
+```
+linsert key before/after value1 value2 在value1的前面/后面添加value2
+如果符合value1的有多个元素，则默认指定最左边的那个
+```
+在指定的下标设值元素
+```
+lset key index value
+```
+删除
+```
+lrem key number value
+删除number个值为value的元素，number是正数则从左侧开始删除，number是负数则从右侧开始删除，number是0则删除所有。
+ltrim key index1 index2
+保留下标从index1到index2的元素，其余的去除
+```
+弹出
+```
+lpop key 左侧弹出
+ropo key 右侧弹出
+rpoplpush key1 key2 从key1的右侧弹出元素，添加到key2的左侧
+```
