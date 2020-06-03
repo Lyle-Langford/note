@@ -96,7 +96,7 @@ hgetall key 获取所有键值对
 ```
 hdel key field
 ```
-# List类型
+# 3.List类型
 redis的list类型其实就一个 每个子元素都是String类型的双向链表。<br>
 我们可以通过push, pop操作从链表的头部或者尾部添加删除元素，这样list既可以作为栈，又可以作为队列。<br>
 <br>
