@@ -1,5 +1,5 @@
 # 1.String类型
-String是最简单的类型，一个key对应一个value，String类型是二级制安全的。redis的String可以包含任何数据，比如jpg图片或者序列化的对象。<br>
+String是最简单的类型，一个key对应一个value，String类型是二进制安全的。redis的String可以包含任何数据，比如jpg图片或者序列化的对象。<br>
 <br>
 设置key对应的值为String类型的value。
 ```
