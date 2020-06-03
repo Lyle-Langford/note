@@ -61,4 +61,41 @@ append key value
 ```
 strlen key
 ```
+# 2.Hash类型
+redis得hash是一个String类型得field和value得映射表。<br>
+它的添加，删除操作都是0(1)（平均）。<br>
+<br>
+设值
+```
+hset key field value
+```
+hash也有不覆盖设值
+```
+hsetnx key field value
+```
+批量设值与批量取值
+```
+hmset key field1 value1 field2 value2 ...
+hmget key field1 field2
+```
+hash可以增加数字，但是没有自增1的命令
+```
+hincrby key field number
+```
+获取hash中的字段数量
+```
+hlen key
+```
+获取hash中的所有字段名或者字段值
+```
+hkeys key 获取该hash的所有字段名
+hvals key 获取该hash的所有字段值
+hgetall key 获取所有键值对
+```
+删除hash中的指定字段
+```
+hdel key field
+```
+
+
 
